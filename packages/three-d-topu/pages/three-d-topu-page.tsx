@@ -1,66 +1,17 @@
-<!--
+/*
  * @Author: Billy-S
  * @Description:
- * @Date: 2021-01-18 17:44:21
- * @LastEditTime: 2021-02-28 17:49:10
--->
-# @idg/topo-panel
-version 1.0 beta
-
-## Install
-`yarn add @idg/topo-panel`
-
-## Usage
-### 1、服务引用
-### appid: cac9ffb424e44a0f924a2536f304cc93
-```ts
-imrpot {Service} from '@idg/idg'
-import ThreeDTopuService from '@idg/topo-panel'
-
-
-const children =[
-  new ThreeDTopuService({
-    channelAlias:'default'
-  })
-]
-```
-
-### 2、组件引用
-```ts
-@Component({
-  depends:['component.cac9ffb424e44a0f924a2536f304cc93.three-d-topu.IdgThreeDTopu']
-})
-
-export default class XXX extends Vue{
-  public render(){
-    return <idg-three-d-topu />
+ * @Date: 2021-01-18 17:52:22
+ * @LastEditTime: 2021-03-01 15:40:50
+ */
+import { Vue, Component } from 'vue-property-decorator';
+import * as data from '../static/js/data';
+@Component({ depends: ['component.IdgThreeDTopu'] })
+export default class ThreeDTopuPage extends Vue {
+  public render() {
+    return <idg-three-d-topu nodes={data.nodes} links={data.links} cNodes={data.cNodes} cLinks={data.cLinks} />;
   }
 }
-```
-
-### 另外，请暂时在使用方的index.html中加入如下(暂时解决报错，后续会改)
-```
-<script>
-      var nowObj;
-      var lastDragNode;
-    </script>
-```
-
-#### beta 版本，尚未定义完全组件属性，后续迭代更新
-
-### 3、数据结构
-图node：{
-  id，name，channel，
-},
-图link：{
-  id，source，target，channel_link
-},
-树cNode：{
-  id,name,channel,unique_id
-},
-树cLink：{
-  id,source,target,channel_link
-},
 
 // 属性
 /**
