@@ -1,0 +1,97 @@
+.tree {
+  color: white;
+  span {
+    color: white;
+  }
+  :global(.ivu-tree-title:hover) {
+    background-color: rgba(58, 61, 84);
+  }
+  :global(.ivu-tree-title-selected) {
+    background-color: rgba(58, 61, 84);
+  }
+  :global(.ivu-checkbox-inner) {
+    background-color: #0e0e15;
+    border: 1px solid #0e0e15;
+  }
+  :global(.ivu-checkbox-checked .ivu-checkbox-inner) {
+    background-color: #0e0e15;
+    border-color: #0e0e15;
+  }
+  :global(.ivu-checkbox-checked .ivu-checkbox-inner::after) {
+    position: absolute;
+    display: table;
+    border: 2px solid #1890ff;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg) scale(1) translate(-50%, -50%);
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    content: ' ';
+  }
+}
+.darkForm {
+  :global(.ivu-form-item label) {
+    color: white;
+  }
+}
+.customSpin {
+  position: absolute;
+  left: 100px;
+  top: 400px;
+}
+.demo-spin-icon-load {
+  margin-top: 40px;
+  animation: ani-demo-spin 1s linear infinite;
+}
+@keyframes ani-demo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.collapsesIcon {
+  position: absolute;
+  margin-right: 4px;
+  background-color: #3a3d51;
+  width: 18px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  top: 50%;
+  right: 0;
+  margin-top: -20px;
+  z-index: 50;
+  opacity: 1;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 20px 0 0 20px;
+  cursor: pointer;
+  &:hover {
+    background: #787fa8;
+  }
+}
+.collapsesIconClosed {
+  position: absolute;
+  background-color: #3a3d51;
+  z-index: 50;
+  top: 50%;
+  left: 0;
+  width: 18px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: -20px;
+  font-size: 12px;
+  opacity: 1;
+  border-radius: 0 20px 20px 0;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background: #787fa8;
+  }
+}

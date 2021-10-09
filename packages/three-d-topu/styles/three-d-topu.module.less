@@ -1,0 +1,112 @@
+.contentHeader {
+  position: relative;
+  display: flex;
+  padding-left: 10px;
+  width: 100%;
+  background: #3a3d51;
+  align-items: center;
+  :global(.ivu-radio-group-button .ivu-radio-wrapper) {
+    background: #3a3d51;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  :global(.ivu-radio-group-button .ivu-radio-wrapper-checked) {
+    color: #1890ff;
+  }
+}
+
+.Main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+  background: #10121a;
+  overflow: hidden;
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+  }
+  // ::-webkit-scrollbar-thumb {
+  //   border-radius: 10px;
+  //   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  //   background: #3a3d51;
+  // }
+  // ::-webkit-scrollbar-track {
+  //   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  //   border-radius: 10px;
+  //   background: rgb(30, 32, 45);
+  // }
+  // ::-webkit-scrollbar-corner{
+  //   background: rgb(30, 32, 45);
+  // }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #3a3d51;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    // background:#3a3d51;
+  }
+}
+
+.collapsesIcon {
+  position: absolute;
+  margin-right: 4px;
+  background-color: #3a3d51;
+  width: 18px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  top: 50%;
+  right: 0;
+  margin-top: -20px;
+  z-index: 50;
+  opacity: 1;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 20px 0 0 20px;
+  cursor: pointer;
+  &:hover {
+    background: #787fa8;
+  }
+}
+.collapsesIconClosed {
+  position: absolute;
+  background-color: #3a3d51;
+  z-index: 50;
+  top: 49%;
+  width: 18px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  border-radius: 0 20px 20px 0;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background: #787fa8;
+  }
+}
+
+.childOpen {
+  position: absolute;
+  z-index: 50;
+  color: white;
+  width: 24px;
+  height: 24px;
+  background: #3a3d51;
+  text-align: center;
+  cursor: pointer;
+}
+.childClose {
+  z-index: 50;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #3a3d51;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  bottom: 8px;
+  right: -28px;
+}
