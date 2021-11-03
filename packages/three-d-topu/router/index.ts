@@ -7,13 +7,8 @@
 import { Route } from '@idg/idg';
 export const routes: Route[] = [
   {
-    path: '/topu-test',
-    name: 'topu-test',
+    path: '/',
+    name: 'index',
     page: 'ThreeDTopuPage',
-  },
-  {
-    path: '/test',
-    name: 'test',
-    page: 'TestPage',
   },
 ];

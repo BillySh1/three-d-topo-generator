@@ -7,8 +7,9 @@
 import { InstanceLink, InstanceNode } from '../../interfaces';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import style from '../../styles/two-d-graph.module.less';
-import { Resource } from '@idg/idg';
+import G6 from '@antv/g6';
 import { Spin } from '@idg/iview';
+
 @Component
 export default class TwoDGraph extends Vue {
   @Prop() public readonly picData: { nodes: InstanceNode[]; edges: InstanceLink[] };
@@ -34,17 +35,6 @@ export default class TwoDGraph extends Vue {
     this.genGraph();
   }
   public async genGraph() {
-    let G6;
-    if (!window.G6) {
-      this.resourceLoading = true;
-      await Resource.import([{ type: 'script', url: '//pkg.oneitfarm.com/@antv/g6/3.5.12/g6.min.js' }]);
-      this.resourceLoading = false;
-      G6 = window.G6;
-    }
-    G6 = window.G6;
-    if (!G6) {
-      this.$Message.error('资源加载错误');
-    }
     const graphData = {
       nodes: JSON.parse(JSON.stringify(this.picData.nodes)),
       edges: JSON.parse(JSON.stringify(this.picData.edges)),
@@ -63,7 +53,7 @@ export default class TwoDGraph extends Vue {
       itemTypes: ['node'],
       className: style['g6-tooltip'],
       // @ts-ignore
-      getContent: (e) => {
+      getContent: (e: any) => {
         const outDiv = document.createElement('div');
         outDiv.style.width = 'fit-content';
         outDiv.innerHTML = this.renderHoverContent(e.item.getModel());

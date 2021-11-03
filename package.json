@@ -17,6 +17,7 @@
   },
   "module": "dist/es/packages/index.js",
   "dependencies": {
+    "@antv/g6": "^4.3.11"
   },
   "main": "dist/main.common.js",
   "typings": "dist/es/packages/index.d.ts",
