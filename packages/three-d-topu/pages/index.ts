@@ -6,10 +6,8 @@
  */
 import { Pages } from '@idg/idg';
 import ThreeDTopuPage from './three-d-topu-page';
-import TestPage from './test';
 const pages: Pages = {
   ThreeDTopuPage,
-  TestPage,
 };
 
 export default pages;
